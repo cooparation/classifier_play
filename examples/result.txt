@@ -1,0 +1,5 @@
+/home/liusj/datasets/layerIDDataSets/trainSets/2-mid/花生米/20170814160026.jpg 3
+/home/liusj/datasets/layerIDDataSets/trainSets/2-mid/吐司/20170725163045.jpg 1
+/home/liusj/datasets/layerIDDataSets/trainSets/3-top/紫薯/20170731152925.jpg 0
+/home/liusj/datasets/layerIDDataSets/trainSets/3-top/紫薯/20170731153327.jpg 0
+/home/liusj/datasets/layerIDDataSets/trainSets/1-bottom/吐司/20170728134403.jpg 2
