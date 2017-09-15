@@ -9,7 +9,7 @@ layer {
     mean_value: 83
     mean_value: 79
     mean_value: 80
-    #mean_file: "data/foodnet_mean.binaryproto"
+    #mean_file: "data/net_mean.binaryproto"
   }
   include {
     phase: TRAIN
@@ -42,7 +42,7 @@ layer {
      mean_value: 83
      mean_value: 79
      mean_value: 80
-    # mean_file: "models/bvlc_alexnet/ZnCarTestMean.binaryproto"
+    # mean_file: "data/net_mean.binaryproto"
   }
   include {
     phase: TEST
@@ -70,8 +70,8 @@ layer {
   name: "slice"
   type: "Slice"
   bottom: "labels"
-  top: "oven_status"
-  top: "food_type"
+  top: "class1"
+  top: "class2"
   slice_param {
     axis: 1
     slice_point: 1
@@ -381,16 +381,16 @@ layer {
   }
 }
 layer {
-  name: "fc8_food_type"
+  name: "fc8_class1"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8_food_type"
+  top: "fc8_class1"
   param {
-    lr_mult: 5
-    decay_mult: 5
+    lr_mult: 1
+    decay_mult: 1
   }
   param {
-    lr_mult: 10
+    lr_mult:2
     decay_mult: 0
   }
   inner_product_param {
@@ -406,16 +406,16 @@ layer {
   }
 }
 layer {
-  name: "fc8_oven_status"
+  name: "fc8_class2"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8_oven_status"
+  top: "fc8_class2"
   param {
-    lr_mult: 5
-    decay_mult: 5
+    lr_mult: 1
+    decay_mult: 1
   }
   param {
-    lr_mult: 10
+    lr_mult: 2
     decay_mult: 0
   }
   inner_product_param {
@@ -431,38 +431,38 @@ layer {
   }
 }
 layer {
-  name: "accuracy_food_type"
+  name: "accuracy_class1"
   type: "Accuracy"
-  bottom: "fc8_food_type"
-  bottom: "food_type"
-  top: "accuracy_food_type"
+  bottom: "fc8_class1"
+  bottom: "class1"
+  top: "accuracy_class1"
   include {
     phase: TEST
   }
 }
 layer {
-  name: "loss_food_type"
+  name: "loss_class1"
   type: "SoftmaxWithLoss"
-  bottom: "fc8_food_type"
-  bottom: "food_type"
-  top: "loss_food_type"
-  loss_weight:0.1
+  bottom: "fc8_class1"
+  bottom: "class1"
+  top: "loss_class1"
+  loss_weight:0.5
 }
 layer {
-  name: "accuracy_oven_status"
+  name: "accuracy_class2"
   type: "Accuracy"
-  bottom: "fc8_oven_status"
-  bottom: "oven_status"
-  top: "accuracy_oven_status"
+  bottom: "fc8_class2"
+  bottom: "class2"
+  top: "accuracy_class2"
   include {
     phase: TEST
   }
 }
 layer {
-  name: "loss_oven_status"
+  name: "loss_class2"
   type: "SoftmaxWithLoss"
-  bottom: "fc8_oven_status"
-  bottom: "oven_status"
-  top: "loss_oven_status"
-  loss_weight:0.9
+  bottom: "fc8_class2"
+  bottom: "class2"
+  top: "loss_class2"
+  loss_weight:0.5
 }

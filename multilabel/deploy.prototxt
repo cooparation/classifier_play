@@ -1,4 +1,4 @@
-name: "AlexNet-multi"
+name: "AlexNet-Multi"
 layer {
   name: "data"
   type: "Input"
@@ -309,20 +309,20 @@ layer {
   }
 }
 layer {
-  name: "fc8_type"
+  name: "fc8_class1"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8_type"
+  top: "fc8_class1"
   param {
-    lr_mult: 5
-    decay_mult: 5
+    lr_mult: 1
+    decay_mult: 1
   }
   param {
-    lr_mult: 10
+    lr_mult: 2
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 3
+    num_output: 21
     weight_filler {
       type: "gaussian"
       std: 0.01
@@ -334,10 +334,10 @@ layer {
   }
 }
 layer {
-  name: "fc8_surface"
+  name: "fc8_class2"
   type: "InnerProduct"
   bottom: "fc7"
-  top: "fc8_surface"
+  top: "fc8_class2"
   param {
     lr_mult: 5
     decay_mult: 5
@@ -347,7 +347,7 @@ layer {
     decay_mult: 0
   }
   inner_product_param {
-    num_output: 2
+    num_output: 4
     weight_filler {
       type: "gaussian"
       std: 0.01
@@ -359,16 +359,16 @@ layer {
   }
 }
 layer {
-  name: "prob_type"
+  name: "prob_class1"
   type: "Softmax"
-  bottom: "fc8_type"
-  top: "prob_type"
+  bottom: "fc8_class1"
+  top: "prob_class1"
   loss_weight:0.5
 }
 layer {
-  name: "prob_surface"
+  name: "prob_class2"
   type: "Softmax"
-  bottom: "fc8_surface"
-  top: "prob_surface"
+  bottom: "fc8_class2"
+  top: "prob_class2"
   loss_weight:0.5
 }
