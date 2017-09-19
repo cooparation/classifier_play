@@ -1,5 +1,7 @@
 #include "classify.h"
 
+using caffe::Timer;
+
 int main(int argc, char** argv) {
   if (argc != 6) {
     std::cerr << "Usage: " << argv[0]
@@ -14,7 +16,13 @@ int main(int argc, char** argv) {
   string trained_file = argv[2];
   string mean_file    = argv[3];
   string label_file   = argv[4];
+
+  //Timer init_time;
+  //init_time.Start();
   Classifier classifier(model_file, trained_file, mean_file, label_file);
+  //init_time.Stop();
+  //std::cout << "init time(ms): "
+  //    << init_time.MilliSeconds() << std::endl;
 
   string file = argv[5];
 
@@ -23,7 +31,12 @@ int main(int argc, char** argv) {
 
   cv::Mat img = cv::imread(file, -1);
   CHECK(!img.empty()) << "Unable to decode image " << file;
+  Timer total_time;
+  total_time.Start();
   std::vector<Prediction> predictions = classifier.Classify(img);
+  total_time.Stop();
+  std::cout << "predict time(ms): "
+      << total_time.MilliSeconds() << std::endl;
 
   /* Print the top N predictions. */
   for (size_t i = 0; i < predictions.size(); ++i) {

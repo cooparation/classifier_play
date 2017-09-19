@@ -15,7 +15,7 @@ prob = FLOAT_INPUT()
 INT_INPUT = c_int * 4
 layerID = INT_INPUT()
 
-paths = ['/home/liusj/datasets/layerIDDataSets/trainSets']
+paths = ['/home/liusj/datasets/layerIDDataSets/testSets']
 types = {'0-empty':0, '1-bottom':1, '2-mid':2, '3-top':3}
 
 num_images = 0

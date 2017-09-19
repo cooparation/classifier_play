@@ -15,7 +15,7 @@ re_width=227
 re_height=227
 
 $TOOLS --resize_width $re_width --resize_height $re_height \
-    $image_root_dir data/image_list_train.txt data/train
+    $image_root_dir/ data/image_list_train.txt data/train
 
 $TOOLS --resize_width $re_width --resize_height $re_height \
-    $image_root_dir data/image_list_test.txt data/test
+    $image_root_dir/ data/image_list_test.txt data/test

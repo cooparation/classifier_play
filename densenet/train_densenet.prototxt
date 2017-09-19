@@ -4,10 +4,10 @@ layer {
   top: "Data1"
   top: "Data2"
   transform_param {
-    mean_file: "/home/zl499/caffe/examples/cifar10/mean.binaryproto"
+    mean_file: "./data/mean.binaryproto"
   }
   data_param {
-    source: "/home/zl499/caffe/examples/cifar10/cifar10_train_lmdb"
+    source: "./data/cifar10_train_lmdb"
     batch_size: 64
     backend: LMDB
   }

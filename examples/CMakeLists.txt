@@ -29,6 +29,11 @@ add_executable(classification ${TEST_FILES})
 target_link_libraries(classification
         classify)
 
+set(TEST_FILES test/classification_multilabel.cpp)
+add_executable(multi_classification ${TEST_FILES})
+target_link_libraries(multi_classification
+        classify)
+
 set(TOOLS tools/multi_convert_imageset.cpp)
 add_executable(multi_convert_imageset ${TOOLS})
 target_link_libraries(multi_convert_imageset

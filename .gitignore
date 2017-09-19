@@ -1,4 +1,5 @@
-./examples/build/*
-./examples/nets/*
-./data/*
-./models/*
+examples/build/*
+examples/nets/*
+data/*
+models/*
+tags

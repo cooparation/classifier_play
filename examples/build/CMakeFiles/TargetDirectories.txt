@@ -1,3 +1,0 @@
-/home/liusj/dl/classifier_play/examples/build/CMakeFiles/classification.dir
-/home/liusj/dl/classifier_play/examples/build/CMakeFiles/classify.dir
-/home/liusj/dl/classifier_play/examples/build/CMakeFiles/multi_convert_imageset.dir

@@ -280,13 +280,13 @@ int main(int argc, char** argv) {
   std::cout << "have runed classifier.Classify" << std::endl;
   /* Print the top N predictions. */
 
-  std::cout << "---------- Surface------------" << std::endl;
+  std::cout << "---------- classify1 ---------- " << std::endl;
   for (size_t i = 0; i < predictions[0].size(); ++i) {
     Prediction p = predictions[0][i];
     std::cout << std::fixed << std::setprecision(4) << p.second << " - \""
               << p.first << "\"" << std::endl;
   }
-  std::cout << " ---------- Type------------" << std::endl;
+  std::cout << " ---------- classify2------------" << std::endl;
   for (size_t i = 0; i < predictions[1].size(); ++i) {
       Prediction p = predictions[1][i];
       std::cout << std::fixed << std::setprecision(4) << p.second << " - \""

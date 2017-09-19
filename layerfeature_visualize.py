@@ -17,7 +17,7 @@ plt.rcParams['image.cmap'] = 'gray'  # use grayscale output rather than a (poten
 # The caffe module needs to be on the Python path;
 # we'll add it here explicitly.
 import sys
-caffe_root='../caffe/'  # this file should be run from {caffe_root}/examples
+caffe_root='/home/liusj/dl/caffe'  # this file should be run from {caffe_root}/examples
 sys.path.insert(0, caffe_root + 'python')
 
 import caffe # If you get "No module named _caffe", either you have not built pycaffe or you have the wrong path.
