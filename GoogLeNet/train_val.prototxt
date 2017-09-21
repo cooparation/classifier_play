@@ -15,7 +15,7 @@ layer {
     mean_value: 123
   }
   data_param {
-    source: "/home/liusj/dl/classifier_play/data/train"
+    source: "./data/train"
     batch_size: 32
     backend: LMDB
   }
@@ -36,7 +36,7 @@ layer {
     mean_value: 123
   }
   data_param {
-    source: "/home/liusj/dl/classifier_play/data/test"
+    source: "./data/test"
     batch_size: 50
     backend: LMDB
   }

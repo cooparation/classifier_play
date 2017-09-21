@@ -4,11 +4,17 @@ layer {
   top: "Data1"
   top: "Data2"
   transform_param {
-    mean_file: "./data/mean.binaryproto"
+    mirror: true
+    crop_size: 224
+    mean_value: 83
+    mean_value: 79
+    mean_value: 80
+    #mean_file: "data/foodnet_mean.binaryproto"
   }
   data_param {
-    source: "./data/cifar10_train_lmdb"
-    batch_size: 64
+    source: "data/densenettest"
+    #batch_size: 50
+    batch_size: 1
     backend: LMDB
   }
 }
@@ -3014,7 +3020,7 @@ layer {
   bottom: "Pooling3"
   top: "InnerProduct1"
   inner_product_param {
-    num_output: 10
+    num_output: 4
     bias_term: true
     weight_filler {
       type: "xavier"

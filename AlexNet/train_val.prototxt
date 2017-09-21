@@ -13,7 +13,7 @@ layer {
     mean_value: 83
     mean_value: 79
     mean_value: 80
-    #mean_file: "examples/foodnet/foodnet_mean.binaryproto"
+    #mean_file: "examples/net/net_mean.binaryproto"
   }
   data_param {
     # LMDB data dir
@@ -36,7 +36,7 @@ layer {
     mean_value: 83
     mean_value: 79
     mean_value: 80
-    #mean_file: "examples/foodnet/foodnet_mean.binaryproto"
+    #mean_file: "examples/net/net_mean.binaryproto"
   }
   data_param {
     # LMDB data dir

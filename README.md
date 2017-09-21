@@ -15,3 +15,5 @@
 ## Outputs
 * data
 * models
+
+## Test [result](https://github.com/cooparation/classifier_play/blob/master/TEST.md)   
