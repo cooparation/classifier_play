@@ -1,1 +1,1 @@
-# the dir the store the models
+# the models directory
