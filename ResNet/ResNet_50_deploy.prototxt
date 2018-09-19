@@ -24,7 +24,7 @@ layer {
     name: "bn_conv1"
     type: "BatchNorm"
     batch_norm_param {
-        use_global_stats: true
+        use_global_stats: true ## note: when test all the item is true, not false
     }
 }
 
